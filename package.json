@@ -1,0 +1,20 @@
+{
+  "name": "inflog-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InFlog/inflog-backEnd.git"
+  },
+  "author": "nargess-jessica-david",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InFlog/inflog-backEnd/issues"
+  },
+  "homepage": "https://github.com/InFlog/inflog-backEnd#readme"
+}
