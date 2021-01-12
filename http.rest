@@ -1,4 +1,4 @@
-POST http://localhost:2000/influencer/add
+ POST http://localhost:2000/influencer/add
 Content-Type: application/json
 
 {
