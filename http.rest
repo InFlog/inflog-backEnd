@@ -1,0 +1,32 @@
+POST http://localhost:2000/influencer/add
+Content-Type: application/json
+
+{
+    "influencerName": "Inflog",
+    "description": "",
+    "password": "Inflog",
+    "followers": "",
+    "posts": ["dddd", "jjj"],
+    "services": [""],
+    "reviews": [0,3],
+    "category": ""
+}
+
+###
+GET http://localhost:2000/influencer
+
+
+###
+POST http://localhost:2000/brand/add
+Content-Type: application/json
+
+{
+    "brandName": "Inflog",
+    "description": "",
+    "password": "Inflog",
+    "pastProjects": [""],
+    "posts": ["dddd", "jjj"],
+    "services": [""],
+    "reviews": [0,3],
+    "category": ""
+}
