@@ -1,4 +1,4 @@
- POST http://localhost:2000/influencer/add
+ POST http://localhost:1000/influencer/add
 Content-Type: application/json
 
 {
@@ -13,11 +13,11 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:2000/influencer
+GET http://localhost:1000/influencer
 
 
 ###
-POST http://localhost:2000/brand/add
+POST http://localhost:1000/brand/add
 Content-Type: application/json
 
 {

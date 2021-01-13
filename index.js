@@ -5,18 +5,16 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 2000;
+const port = process.env.PORT || 1000;
 
 app.use(cors());
 app.use(express.json());
 
-
 mongoose.connect(
-    'mongodb://infloguser:infloguser@cluster0-shard-00-00.0ctlv.mongodb.net:27017,cluster0-shard-00-01.0ctlv.mongodb.net:27017,cluster0-shard-00-02.0ctlv.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-eh1gtz-shard-0&authSource=admin&retryWrites=true&w=majority',
+    'mongodb+srv://inflog:inflog@cluster0.zm0iz.mongodb.net/inflog?retryWrites=true&w=majority',
     { useNewUrlParser: true },
     () => console.log('connected to DB')
 );
-
 
 const influencerRouter = require('./routes/influencer');
 const brandRouter = require('./routes/brand')
