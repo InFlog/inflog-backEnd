@@ -2,9 +2,9 @@
 Content-Type: application/json
 
 {
-    "influencerName": "Inflog",
+    "influencerName": "Inflog3",
     "description": "",
-    "password": "Inflog",
+    "password": "Inflog3",
     "followers": "",
     "posts": ["dddd", "jjj"],
     "services": [""],
