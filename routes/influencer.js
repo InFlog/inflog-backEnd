@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let Influencer = require('../models/influencer_model');
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async(req, res) => {
     try {
         const influencer = await Influencer.find();
         res.json(influencer);
@@ -11,7 +11,7 @@ router.route('/').get(async (req, res) => {
 })
 
 
-router.route('/add').post(async (req, res) => {
+router.route('/add').post(async(req, res) => {
     const influencerName = req.body.influencerName;
     const description = req.body.description;
     const password = req.body.password;
@@ -40,5 +40,26 @@ router.route('/add').post(async (req, res) => {
     }
 })
 
+router.route('/update/:id').post((req, res) => {
+    Influencer.findById(req.params.id)
+        .then(influencer => {
+            influencer.username = req.body.username;
+            influencer.description = req.body.description;
+            influencer.password = req.body.password;
+            influencer.pastProjects = Array(req.body.pastProjects);
+            influencer.services = Array(req.body.services);
+            influencer.posts = Array(req.body.posts);
+            influencer.reviews = Array(req.body.reviews);
+            influencer.category = req.body.category;
 
-module.exports = router; 
+
+            influencer.save()
+                .then(() => res.json(influencer))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
+
+module.exports = router;

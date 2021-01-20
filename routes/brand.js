@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let Brand = require('../models/brand_model');
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async(req, res) => {
     try {
         const brand = await Brand.find();
         res.json(brand);
@@ -11,7 +11,7 @@ router.route('/').get(async (req, res) => {
 })
 
 
-router.route('/add').post(async (req, res) => {
+router.route('/add').post(async(req, res) => {
     const brandName = req.body.brandName;
     const description = req.body.description;
     const password = req.body.password;
@@ -41,4 +41,7 @@ router.route('/add').post(async (req, res) => {
 })
 
 
-module.exports = router; 
+
+
+
+module.exports = router;
