@@ -11,17 +11,17 @@ router.route('/').get(async (req, res) => {
 })
 
 router.route('/search/:searchParam').get(async (req, res) => {
-    console.log('req.params', req.params.searchParam)
-    const test = { brandName: { $regex : new RegExp(req.params.searchParam, "i") }}
-    console.log('req.params', test)
-    try {
-        
-        const brand = await Brand.find(test).exec();
+  console.log('req.params', req.params.searchParam)
+  const test = { brandName: { $regex : new RegExp(req.params.searchParam, "i") }}
+  console.log('req.params', test)
+  try {
       
-        res.json(brand);
-    } catch (err) {
-        res.json('Error:' + err);
-    }
+      const brand = await Brand.find(test).exec();
+    
+      res.json(brand);
+  } catch (err) {
+      res.json('Error:' + err);
+  }
 })
 
 
