@@ -10,6 +10,19 @@ router.route('/').get(async (req, res) => {
     }
 })
 
+router.route('/search/:searchParam').get(async (req, res) => {
+    console.log('req.params', req.params.searchParam)
+    const test = { influencerName: { $regex : new RegExp(req.params.searchParam, "i") }}
+    console.log('req.params', test)
+    try {
+        
+        const influencer = await Influencer.find(test).exec();
+      
+        res.json(influencer);
+    } catch (err) {
+        res.json('Error:' + err);
+    }
+})
 
 router.route('/add').post(async (req, res) => {
     const influencerName = req.body.influencerName;
