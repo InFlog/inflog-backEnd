@@ -54,5 +54,24 @@ router.route('/add').post(async (req, res) => {
     }
 })
 
+router.route('/update/:id').post((req, res) => {
+    Brand.findById(req.params.id)
+        .then(brand => {
+            brand.username = req.body.username;
+            brand.description = req.body.description;
+            brand.password = req.body.password;
+            brand.pastProjects = Array(req.body.pastProjects);
+            brand.services = Array(req.body.services);
+            brand.posts = Array(req.body.posts);
+            brand.reviews = Array(req.body.reviews);
+            brand.category = req.body.category;
+
+
+            brand.save()
+                .then(() => res.json(brand))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
 
 module.exports = router; 
