@@ -12,8 +12,9 @@ const influencerSchema = new Schema({
     posts: [],
     services: [],
     reviews: [],
-    category: { type: String }
-
+    category: { type: String },
+    subHeader: { type: String },
+    // contact: { type: String }
 });
 
 const Influencer = mongoose.model('Influencer', influencerSchema);

@@ -9,12 +9,13 @@ const Schema = mongoose.Schema;
 // })
 
 const brandSchema = new Schema({
-    brandName: { type: String, required: true },
+    brandName: { type: String },
     description: { type: String },
-    password: { type: String, required: true },
+    password: { type: String },
+    subHeader: { type: String },
     pastProjects: [],
     posts: [],
-    services: [],
+    services: [{ type: Object }],
     reviews: [],
     category: { type: String }
 
