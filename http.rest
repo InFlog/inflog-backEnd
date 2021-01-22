@@ -2,14 +2,17 @@
 Content-Type: application/json
 
 {
-    "influencerName": "Inflog",
+    "contact": "",
+    "subHeader": "",
+    "password": "x",
     "description": "",
-    "password": "Inflog",
-    "followers": "",
-    "posts": ["dddd", "jjj"],
-    "services": [""],
-    "reviews": [0,3],
-    "category": ""
+    "influencerName": "MisterX",
+    "followers": 0,
+    "posts": [],
+    "services": [],
+    "category": "",
+    "reviews": [2,3]
+
 }
 
 ###
@@ -28,5 +31,38 @@ Content-Type: application/json
     "posts": ["dddd", "jjj"],
     "services": [""],
     "reviews": [0,3],
-    "category": ""
+    "category": "",
+    "subHeader": ""
+}
+###
+POST http://localhost:1000/brand/update/60056ccdbd48075d2885238f
+Content-Type: application/json
+
+{
+    "brandName": "x",
+    "description": "Timeless watchdesigner",
+    "password": "JBW",
+    "pastProjects": [""],
+    "posts": ["dddd", "jjj"],
+    "services": [""],
+    "reviews": [0,3],
+    "category": "",
+    "subHeader": ""
+}
+
+###
+POST http://localhost:1000/influencer/update/600ac6cabbde6b1528f42021
+Content-Type: application/json
+
+{
+    "influencerName": "InflogReview",
+    "description": "",
+    "password": "Inflog",
+    "followers": "",
+    "posts": ["dddd", "jjj"],
+    "services": [""],
+    "reviews": [3,4],
+    "category": "",
+    "subHeader": "ddd",
+    "contact": "ddd"
 }

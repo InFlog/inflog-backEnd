@@ -2,15 +2,20 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-
+// const serviceSchema = new Schema({
+//     header: { type: String },
+//     subHeading: { type: String },
+//     serviceDes: { type: String }
+// })
 
 const brandSchema = new Schema({
-    brandName: { type: String, required: true },
+    brandName: { type: String },
     description: { type: String },
-    password: { type: String, required: true },
+    password: { type: String },
+    subHeader: { type: String },
     pastProjects: [],
     posts: [],
-    services: [],
+    services: [{ type: Object }],
     reviews: [],
     category: { type: String }
 
