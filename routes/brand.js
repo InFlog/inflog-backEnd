@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let Brand = require('../models/brand_model');
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async(req, res) => {
     try {
         const brand = await Brand.find();
         res.json(brand);
@@ -25,7 +25,7 @@ router.route('/search/:searchParam').get(async (req, res) => {
 })
 
 
-router.route('/add').post(async (req, res) => {
+router.route('/add').post(async(req, res) => {
     const brandName = req.body.brandName;
     const description = req.body.description;
     const password = req.body.password;
@@ -76,4 +76,7 @@ router.route('/update/:id').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-module.exports = router; 
+
+
+
+module.exports = router;
