@@ -76,6 +76,21 @@ router.route('/update/:id').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// search 
+
+router.route('/search/:searchParam').get(async (req, res) => {
+    console.log('req.params', req.params.searchParam)
+    const test = { brandName: { $regex : new RegExp(req.params.searchParam, "i") }}
+    console.log('req.params', test)
+    try {
+        
+        const brand = await Brand.find(test).exec();
+      
+        res.json(brand);
+    } catch (err) {
+        res.json('Error:' + err);
+    }
+})
 
 
 
