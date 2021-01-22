@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
-    'mongodb+srv://inflog:inflog@cluster0.zm0iz.mongodb.net/inflog?retryWrites=true&w=majority',
+    'mongodb+srv:/ inflog:inflog@cluster0.zm0iz.mongodb.net/inflog?retryWrites=true&w=majority',
     { useNewUrlParser: true },
     () => console.log('connected to DB')
 );
