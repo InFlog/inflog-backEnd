@@ -10,20 +10,6 @@ router.route('/').get(async(req, res) => {
     }
 })
 
-router.route('/search/:searchParam').get(async (req, res) => {
-  console.log('req.params', req.params.searchParam)
-  const test = { brandName: { $regex : new RegExp(req.params.searchParam, "i") }}
-  console.log('req.params', test)
-  try {
-      
-      const brand = await Brand.find(test).exec();
-    
-      res.json(brand);
-  } catch (err) {
-      res.json('Error:' + err);
-  }
-})
-
 
 router.route('/add').post(async(req, res) => {
     const brandName = req.body.brandName;
