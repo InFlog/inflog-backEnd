@@ -10,9 +10,9 @@ const port = process.env.PORT || 1000;
 app.use(cors());
 app.use(express.json());
 
+
 mongoose.connect(
-    'mongodb+srv://inflog:inflog@cluster0.zm0iz.mongodb.net/inflog?retryWrites=true&w=majority',
-    { useNewUrlParser: true },
+    'mongodb+srv://mongodb+srv://Inflog:Inflog@cluster0.zm0iz.mongodb.net/Inflog?retryWrites=true&w=majority', { useNewUrlParser: true },
     () => console.log('connected to DB')
 );
 
