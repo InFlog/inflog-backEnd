@@ -65,4 +65,8 @@ router.route('/update/:id').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+<<<<<<< HEAD
 module.exports = Influencer;
+=======
+module.exports = router;
+>>>>>>> 9ae123d463ae82c5418431d13c7f6c8416f60924
