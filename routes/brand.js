@@ -10,7 +10,10 @@ router.route('/').get(async(req, res) => {
     }
 })
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c70cb774c355f350ceed78ac9e58842a66652cbd
 router.route('/add').post(async(req, res) => {
     const brandName = req.body.brandName;
     const description = req.body.description;
@@ -78,4 +81,8 @@ router.route('/search/:searchParam').get(async (req, res) => {
     }
 })
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> c70cb774c355f350ceed78ac9e58842a66652cbd
