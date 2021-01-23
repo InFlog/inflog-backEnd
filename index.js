@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 mongoose.connect(
-    'mongodb+srv://mongodb+srv://Inflog:Inflog@cluster0.zm0iz.mongodb.net/Inflog?retryWrites=true&w=majority', { useNewUrlParser: true },
+    'mongodb+srv://mongodb+srv://inflog:Inflog@cluster0.zm0iz.mongodb.net/inflog?retryWrites=true&w=majority', { useNewUrlParser: true },
     () => console.log('connected to DB')
 );
 
