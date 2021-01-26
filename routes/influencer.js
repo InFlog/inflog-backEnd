@@ -81,4 +81,4 @@ router.route('/search/:searchParam').get(async (req, res) => {
   }
 })
 
-module.exports = Influencer;
+module.exports = router;
