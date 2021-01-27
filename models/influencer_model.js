@@ -14,7 +14,8 @@ const influencerSchema = new Schema({
     reviews: [],
     category: { type: String },
     subHeader: { type: String },
-    // contact: { type: String }
+    contact: { type: String },
+    image: { type: String }
 });
 
 const Influencer = mongoose.model('Influencer', influencerSchema);

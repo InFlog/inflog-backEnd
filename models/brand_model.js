@@ -15,9 +15,11 @@ const brandSchema = new Schema({
     subHeader: { type: String },
     pastProjects: [],
     posts: [],
-    services: [{ type: Object }],
+    services: [],
     reviews: [],
-    category: { type: String }
+    category: { type: String },
+    contact: { type: String },
+    image: { type: String }
 
 });
 

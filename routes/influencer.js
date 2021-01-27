@@ -22,6 +22,7 @@ router.route('/add').post(async (req, res) => {
   const services = Array(req.body.services);
   const reviews = Array(req.body.reviews);
   const category = req.body.category;
+  const image = req.body.image
 
 
   const newInfluencer = new Influencer({
@@ -34,6 +35,8 @@ router.route('/add').post(async (req, res) => {
     services,
     reviews,
     category,
+    contact,
+    image
   });
 
   try {
@@ -44,6 +47,13 @@ router.route('/add').post(async (req, res) => {
   }
 })
 
+
+router.route('/:id').get((req, res) => {
+  Influencer.findById(req.params.id)
+    .then(influencer => res.json(influencer))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/update/:id').post((req, res) => {
   Influencer.findById(req.params.id)
     .then(influencer => {
@@ -51,13 +61,13 @@ router.route('/update/:id').post((req, res) => {
       influencer.description = req.body.description;
       influencer.password = req.body.password;
       influencer.followers = req.body.followers;
-      influencer.services = Array(req.body.services);
-      influencer.posts = Array(req.body.posts);
-      influencer.reviews = Array(req.body.reviews);
+      influencer.services = req.body.services;
+      influencer.posts = req.body.posts;
+      influencer.reviews = req.body.reviews;
       influencer.category = req.body.category;
       influencer.subHeader = req.body.subHeader;
-      // influencer.contact = req.body.contact;
-
+      influencer.contact = req.body.contact;
+      influencer.image = req.body.image
       influencer.save()
         .then(() => res.json(influencer))
         .catch(err => res.status(400).json('Error: ' + err));
@@ -65,4 +75,4 @@ router.route('/update/:id').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-module.exports = Influencer;
+module.exports = router;

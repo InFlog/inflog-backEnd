@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 mongoose.connect(
-    'mongodb+srv://mongodb+srv://inflog:inflog@cluster0.zm0iz.mongodb.net/inflog?retryWrites=true&w=majority', { useNewUrlParser: true },
+    'mongodb://inflog:inflog@cluster0-shard-00-00.0ctlv.mongodb.net:27017,cluster0-shard-00-01.0ctlv.mongodb.net:27017,cluster0-shard-00-02.0ctlv.mongodb.net:27017/inflog?ssl=true&replicaSet=atlas-eh1gtz-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true },
     () => console.log('connected to DB')
 );
 
