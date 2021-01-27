@@ -63,7 +63,7 @@ router.route('/update/:id').post((req, res) => {
       influencer.followers = req.body.followers;
       influencer.services = req.body.services;
       influencer.posts = req.body.posts;
-      influencer.reviews = req.body.reviews;
+      influencer.reviews = req.body.reviews; S
       influencer.category = req.body.category;
       influencer.subHeader = req.body.subHeader;
       influencer.contact = req.body.contact;
@@ -74,5 +74,21 @@ router.route('/update/:id').post((req, res) => {
     })
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
+// search 
+
+router.route('/search/:searchParam').get(async (req, res) => {
+  console.log('req.params', req.params.searchParam)
+  const test = { brandName: { $regex: new RegExp(req.params.searchParam, "i") } }
+  console.log('req.params', test)
+  try {
+
+    const influencer = await Influencer.find(test).exec();
+
+    res.json(influencer);
+  } catch (err) {
+    res.json('Error:' + err);
+  }
+})
 
 module.exports = router;
